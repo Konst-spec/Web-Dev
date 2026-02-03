@@ -8,7 +8,8 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 72px;
+    padding: 16px 32px;
+    box-sizing: border-box;
 }
 .search {
     display: flex;
@@ -21,11 +22,19 @@ body {
     gap: 10px;
 }
 .menu button{
-    font-family: inherit;
+    font-family: Mona Sans, "Mona Sans Header Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #fdfdfd;
+    border: none;
+    font-size: 16px;
+    color: #1f2328;
+    padding: 8px;
 }
 .navigation {
     display: flex;
     flex-direction: row;
+}
+.navigation svg{
+    margin-right: 16px;
 }
 .main {
     display: flex;
@@ -57,6 +66,7 @@ body {
     margin: 0 0 0 0;
     letter-spacing: -2px;
     color: #1f2328;
+    text-align: center;
 }
 .head-info p{
     font-family: Mona Sans, "Mona Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -87,15 +97,12 @@ body {
 }
 .prices {
     width: 100%;
-    height: 1028px;
     max-width: 1280px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     text-align: center;
-
     box-sizing: border-box;
-
+    align-items: stretch;
 }
 .price {
     display: flex;
@@ -105,20 +112,22 @@ body {
 }
 
 .block {
-    height: 988px;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
     background-color: #f6f8fa;
     box-shadow: 0 0 0 1px #d1d9e0, 0 56px 112px 0 #25292e52;
+    flex: 1;
+
 }
 .background {
-    width: 33.33333333332%;
-    height: 988px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 32px 16px 8px 16px;
-
+    flex: 1;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 .head {
     padding: 24px 16px 16px 16px;
@@ -150,7 +159,6 @@ h3, p {
     background-color: #0e72e7;
     border-radius: 12px;
     padding: 0 8px 8px;
-    height: 1028px;
 }
 .wrapper #recommended {
     color: white;
@@ -161,18 +169,21 @@ h3, p {
 }
 
 #bg3 {
-    height: 1028px;
     padding: 0 8px;
 }
 #bg3 .head p{
     padding: 0;
     margin: 0;
 }
+#startingAt {
+    display: flex;
+    align-items: center;
+}
 #startingAt div{
     padding: 4px 16px;
     border: 1px solid #d1d9e0;
     box-sizing: border-box;
-    margin: 5px 35% 0 35%;
+    margin: 5px auto 0 auto;
     border-radius: 12px;
 }
 .outer {
@@ -237,12 +248,14 @@ h3, p {
     color: white;
 }
 .info {
+    height: 100%;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: self-start;
     padding: 8px 16px 8px 16px;
     background-color: #f6f8fa;
+    border-radius: 12px;
 }
 .info ul {
     display: flex;
@@ -376,4 +389,131 @@ h3, p {
 .compare img {
     height: 28px;
     width: 20px;
+}
+.st {
+    height: 10px;
+}
+.input {
+    width: 318px;
+    color: #59636e;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #d1d9e0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-family: "Mona Sans", "Mona Sans Header Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 0 0 0 8px;
+}
+.svg {
+    position: relative;
+    top: 2px;
+    margin-right: 8px;
+}
+.s {
+    margin-right: auto;
+}
+.line {
+    background-color: #d1d9e0;
+    height: 18px;
+    width: 1px;
+    margin: auto 12px;
+}
+#dashboard {
+    font-family: "Mona Sans", "Mona Sans Header Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    border-radius: 8px;
+    border: 1px solid #d1d9e0;
+    background-color: white;
+    padding: 4px 12px;
+    color: #59636e;
+}
+#btn-content{
+    display: none;
+}
+@media (max-width: 1280px) {
+    .buttons{
+        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+    .buttons button {
+        width: 100%;
+    }
+    .black{
+        order: 1;
+    }
+    .white{
+        order: 0;
+    }
+}
+@media (max-width: 1280px) {
+    .input .s, #slash{
+    display: none;
+    }
+    .input{
+        width: auto;
+    }
+}
+@media (max-width: 1010px) {
+    .prices{
+        flex-direction: column;
+        align-items: center;
+    }
+    .main {
+        padding: 0 40px;
+    }
+    .head-info {
+        padding-top: 48px;
+    }
+    .head-info h1{
+        font-size: 48px;
+    }
+    .header{
+        padding-bottom: 30px;
+    }
+    #dashboard {
+        font-weight: bold;
+    }
+    .menu {
+        display: none;
+    }
+    .input {
+        display: none;
+    }
+    .line {
+        display: none;
+    }
+    #btn-content{
+        display: block;
+    }
+    .navigation svg {
+        margin: 0 0 0 60px;
+    }
+}
+@media (max-width: 767px){
+    .main {
+        padding: 0 40px;
+    }
+    .cont{
+        grid-template-columns: 1fr;
+    }
+    .head-info h1{
+        font-size: 32px;
+    }
+    .info-btn button{
+        padding: 12px 20px;
+    }
+    .head{
+        font-size: 20px;
+    }
+}
+@media (max-width: 530px){
+    .main {
+        padding: 0;
+    }
+    .cont {
+        padding: 0 8px;
+    }
 }
