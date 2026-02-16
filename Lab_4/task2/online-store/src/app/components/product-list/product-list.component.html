@@ -1,0 +1,9 @@
+<div class="product-grid">
+
+  @for (item of products(); track item.id) {
+    <product-card [product]="item"></product-card>
+
+  }
+
+
+</div>

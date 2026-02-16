@@ -1,0 +1,16 @@
+ <div class="card">
+   <a class="card-link" [href]="product?.link" target="_blank" >
+    <div class="upper">
+      <img [src]="product?.image">
+      <h3>{{ product?.name }}</h3>
+    </div>
+    </a>
+    <div class="lower">
+      <span>{{ product?.price }} ₸</span>
+      <span>⭐ {{ product?.rating }}</span>
+      <div><p>{{ product?.description }}</p></div>
+
+      <button type="button" (click)="shareOnWhatsApp($event)">Share</button>
+    </div>
+  </div>
+
