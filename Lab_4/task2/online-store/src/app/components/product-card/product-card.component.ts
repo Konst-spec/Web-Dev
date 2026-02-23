@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter, model} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {Product} from '../../models/product.model';
@@ -13,6 +13,17 @@ import {Product} from '../../models/product.model';
 
 export class ProductCardComponent {
   @Input() product!: Product;
+  @Output() delete = new EventEmitter<number>();
+  @Output() like = new EventEmitter<number>();
+
+  likeProduct() {
+    this.product.likes += 1;
+    this.like.emit(this.product.id);
+  }
+  deleteProduct() {
+    this.delete.emit(this.product.id);
+  }
+
   shareOnWhatsApp(event: Event) {
     event.stopPropagation();
 

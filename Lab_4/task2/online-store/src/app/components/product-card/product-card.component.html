@@ -11,6 +11,8 @@
       <div><p>{{ product?.description }}</p></div>
 
       <button type="button" (click)="shareOnWhatsApp($event)">Share</button>
+      <button type="button" (click)="likeProduct()">❤️ {{ product?.likes }}</button>
+      <button type="button" (click)="deleteProduct()">delete</button>
     </div>
   </div>
 
