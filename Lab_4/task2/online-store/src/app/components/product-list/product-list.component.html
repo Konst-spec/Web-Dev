@@ -1,9 +1,14 @@
+<div class="search">
+  <input type="text" placeholder="Search" [(ngModel)]="search" (ngModelChange)="filterProducts()"/>
+</div>
+
 <div class="product-grid">
 
-  @for (item of products(); track item.id) {
+  @for (item of filtered; track item.id) {
     <product-card [product]="item"></product-card>
-
   }
 
-
 </div>
+@if (filtered.length === 0) {
+  <p>No products found</p>
+}

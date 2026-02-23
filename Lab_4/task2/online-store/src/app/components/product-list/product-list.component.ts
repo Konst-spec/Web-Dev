@@ -3,19 +3,20 @@ import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {Product} from '../../models/product.model';
 import {ProductCardComponent} from '../product-card/product-card.component';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'product-list',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ProductCardComponent],
+  imports: [CommonModule, RouterOutlet, ProductCardComponent, FormsModule],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 
 export class ProductListComponent {
-  protected products=  signal<Product[]>([
+  products=  signal<Product[]>([
     { id: 1,
-      name: 'Набережные чleны туалетная бумага 1-слойный 1 шт',
+      name: 'Набережные челны туалетная бумага 1-слойный 1 шт',
       description: 'Туалетная бумага однослойная без втулки. Бумага серого цвета, плотная, мягкая. Используется в гигиенических целях.' ,
       price: 226,
       rating: 5,
@@ -115,4 +116,10 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/leadbros-hd-159-chernyi-106107741/?c=750000000',
     },
   ]);
+  search: string = '';
+  filtered = [...this.products()];
+  filterProducts() {
+    const term = this.search.toLowerCase();
+    this.filtered = this.products().filter(product => product.name.toLowerCase().includes(term));
+  }
 }
