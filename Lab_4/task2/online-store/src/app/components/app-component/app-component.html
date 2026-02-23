@@ -1,0 +1,16 @@
+<div class="header">
+  <h2>Select category</h2>
+
+  @for (category of categories; track categories){
+    <button (click)="selectCategory(category.id)"> {{ category.name }}</button>
+  }
+
+</div>
+
+<hr>
+
+@if (selectedCategory()){
+  <product-list [products]="products()" (delete)="onDeleteProduct($event)"></product-list>
+}@else{
+  <p>Please select a category</p>
+}
