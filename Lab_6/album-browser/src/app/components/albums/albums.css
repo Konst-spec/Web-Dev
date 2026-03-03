@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.load {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.album {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.learn-more {
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.learn-more p:first-child {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.learn-more p:last-child {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+.del {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  background: white;
+  color: #ff4444;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.del:hover {
+  background: #fff5f5;
+}

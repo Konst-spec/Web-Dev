@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="header">
+    <h2>Фотографии альбома #{{ albumId() }}</h2>
+    <button (click)="goBackToAlbum()" class="btn-back">
+      ← Вернуться к альбому
+    </button>
+  </div>
+
+  @if (loading()) {
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Загрузка фотографий...</p>
+    </div>
+  }
+
+  @if (!loading()&& photos(); as photos) {
+
+    <div class="photos-grid">
+      @for (photo of photos; track photo.id) {
+        <div class="photo-card">
+          <img
+            [src]="photo.thumbnailUrl"
+            alt="photo"
+            class="photo-thumbnail"
+          >
+          <div class="photo-title">{{ photo.title }}</div>
+        </div>
+      }
+    </div>
+
+
+
+  }
+</div>

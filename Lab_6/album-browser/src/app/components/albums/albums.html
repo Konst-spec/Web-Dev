@@ -1,0 +1,19 @@
+@if(loading()){
+  <div class="load"><p>ПОДГРУЗ</p></div>
+}
+
+@if(!loading()){
+  <div class="albums-grid">
+    @for(album of albums(); track album){
+      <div class="album">
+        <a class="learn-more" [routerLink]="['/albums', album.id]">
+          <p>{{album.title}}</p>
+          <p>ID: {{ album.id }}</p>
+        </a>
+        <button class="del" (click)="deleteAlbum(album.id)">
+          delete
+        </button>
+      </div>
+    }
+  </div>
+}
